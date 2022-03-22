@@ -1,0 +1,69 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="employee_employeedetails_listing_data_source" xsi:type="string">PaintingTheme\EmployeeDetails\Model\ResourceModel\Employee\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+<type name="PaintingTheme\EmployeeDetails\Model\ResourceModel\Employee\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">employee_details</argument>
+            <argument name="eventPrefix" xsi:type="string">employee_detail_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">employee_detail_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">PaintingTheme\EmployeeDetails\Model\ResourceModel\Employee</argument>
+        </arguments>
+    </type>
+
+     <virtualType name="EmployeeGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">PaintingTheme\EmployeeDetails\Model\ResourceModel\Employee\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">MemberGridFilterPool</argument> <!-- Define new object for filters -->
+        </arguments>
+    </virtualType>
+
+    <virtualType name="MemberGridFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    
+</config>
+
+
+
+<!--
+    This is applicable to default Dataprovider file 
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="studentinfo_student_form_data_source" xsi:type="string">Sample\Example\Model\ResourceModel\Student\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+-->
+
+
+ <!-- <virtualType name="PaintingTheme\EmployeeDetails\Model\ResourceModel\Employee\Grid\Collection" 
+    type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">employee_details</argument>
+            <argument name="resourceModel" xsi:type="string">PaintingTheme\EmployeeDetails\Model\ResourceModel\Employee</argument>
+        </arguments>
+    </virtualType> -->
+
+
+<!---Below Part is responsible for the Form Data-->
+     <!-- <type name="PaintingTheme\EmployeeDetails\Model\ResourceModel\DataProvider">
+        <arguments>
+            <argument name="collections" xsi:type="array"> -->
+            <!--name format is UiComponent file name_data_source -->
+                <!--  <item name="employee_employeedetails_form_data_source" xsi:type="string">PaintingTheme\EmployeeDetails\Model\ResourceModel\Employee\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type> -->

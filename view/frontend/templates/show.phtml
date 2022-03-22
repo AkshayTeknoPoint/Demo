@@ -1,0 +1,43 @@
+<style>
+
+</style>
+<?php
+// get custom data
+$custom_data = $block->getCustomData();
+?>
+<fieldset class="fieldset">
+    <?php
+    if (count($custom_data)) {
+        ?>
+
+<table class="demo">
+    <tr>
+        <th>First Name </th>
+        <th>Last Name</th>
+        <th>Mobile No</th>
+        <th>Address</th>
+        <th>Action</th>
+    </tr>
+    <?php foreach ($custom_data as $contact): ?>
+        <tr>
+        <td><?php echo $contact['first_name']; ?></td>
+        <td><?php echo $contact['last_name']; ?></td>
+        <td><?php echo $contact['mobile_no']; ?></td>
+        <td> <?php echo $contact['address']; ?> </td>
+        <td><a href="<?= $block->getUrl('*/*/edits').'id/'.$contact->getid();?>" 
+               class="action primary">Edit</a></td>
+        </tr>
+   <?php endforeach; ?>
+</table>
+<?php if ($block->getPagerHtml()): ?>
+                <div class="order-products-toolbar toolbar bottom">
+                    <?= $block->getPagerHtml() ?>
+                </div>
+        <?php endif ?>
+    <?php } else { ?>
+                <div class="message info empty">
+                    <span><?= $block->escapeHtml('You have no data in table.') ?></span>
+                </div>
+    <?php  } ?>
+</fieldset>
+

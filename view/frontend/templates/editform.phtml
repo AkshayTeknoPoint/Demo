@@ -1,0 +1,24 @@
+<?php
+// get custom data
+$custom_data = $block->show();
+//echo $custom_data;
+?>
+<div class="container">
+  <form action="<?= $block->getUrl('employee/index/update').'id/'.$custom_data->getid(); ?>" method="POST">
+
+    <label for="firstname">First Name</label>
+    <input type="text" id="firstname" name="firstname" placeholder="Your name.." value="<?php echo $custom_data['first_name'];?>">
+    <br><br>
+    <label for="lastname">Last Name</label>
+    <input type="text" id="lastname" name="lastname" placeholder="Your last name.." value="<?php echo $custom_data['last_name'];?>">
+    <br><br>
+    <label for="mobile">Mobile No</label>
+    <input type="text" id="mobile" name="mobile" placeholder=" Your Mobile No " value="<?php echo $custom_data['mobile_no'];?>">
+    <br><br>
+    <label for="address">Address</label>
+    <input type="text" id="address" name="address" placeholder=" Your Address " value="<?php echo $custom_data['address'];?>">
+    <br><br>
+    <br>
+    <input type="submit" class="update" value="Update">
+  </form>
+</div>

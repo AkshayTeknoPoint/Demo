@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="PaintingTheme_EmployeeDetails::Employee" title="Employee" module="PaintingTheme_EmployeeDetails" 
+        sortOrder="10" resource="PaintingTheme_EmployeeDetails::parent" />
+		<add id="PaintingTheme_EmployeeDetails::EmployeeDetails" title="EMPLOYEE DETAILS" module="PaintingTheme_EmployeeDetails" 
+        sortOrder="20" action="employee/employeedetails/index" resource="PaintingTheme_EmployeeDetails::parent"
+         parent="PaintingTheme_EmployeeDetails::Employee" />
+	</menu>    
+</config>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

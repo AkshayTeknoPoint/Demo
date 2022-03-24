@@ -10,6 +10,8 @@
     "require": {
       "php": "~7.0.0||~7.2.0||~7.3.0||~7.4.0||~7.4.10"
     },
+    "minimum-stability": "dev",
+    "prefer-stable" : true,
     "autoload": {
       "files": [ "registration.php" ],
       "psr-4": {
